@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Pressable } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Pressable, TouchableOpacity } from 'react-native'
 import { useForm, Controller, SubmitErrorHandler, SubmitHandler } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
 import React from 'react'
@@ -85,8 +85,12 @@ const AppForm = () => {
                     borderless: false,
                 }}
                 onPress={handleSubmit(onSubmit, onError)}>
-                <Text style={styles.buttonText}>Submit</Text>
+                <Text style={styles.buttonText}>Submit (Pressable)</Text>
             </Pressable>
+
+            <TouchableOpacity activeOpacity={0.6} style={styles.button} onPress={handleSubmit(onSubmit, onError)}>
+                <Text style={styles.buttonText}>Submit (TouchableOpacity)</Text>
+            </TouchableOpacity>
 
             <Pressable
                 style={styles.resetButton}
@@ -96,7 +100,7 @@ const AppForm = () => {
                 }}
                 onPress={() => {
                     reset({
-                        email: '',
+                        name: '',
                         phone: '',
                     })
                 }}>

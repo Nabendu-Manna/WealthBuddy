@@ -1,6 +1,7 @@
 import { StyleSheet, View, Text } from 'react-native'
 import React from 'react'
 
+
 export default function FlatCards(): JSX.Element {
     const cardList = [{
         title: 'Red',
@@ -28,13 +29,11 @@ export default function FlatCards(): JSX.Element {
         <View>
             <Text style={styles.headingText}>Flat Cards</Text>
             <View style={styles.container}>
-                {cardList.map((item) => {
-                    return (
-                        <View style={[styles.card, { backgroundColor: item.bgColor }]} key={item.title}>
-                            <Text style={{ color: item.textColor }}>{item.title}</Text>
-                        </View>
-                    )
-                })}
+                {cardList.map((item) => (
+                    <View style={[styles.card, { backgroundColor: item.bgColor }]} key={item.title}>
+                        <Text style={{ color: item.textColor }}>{item.title}</Text>
+                    </View>
+                ))}
             </View>
         </View>
     )
