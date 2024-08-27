@@ -27,7 +27,12 @@ function App(): JSX.Element {
         name='Home'
         component={Home}
         options={{
-          title: "Trending Products"
+          title: "Trending Products",
+          headerStyle: {
+            backgroundColor: "#FF4242"
+          },
+          headerTintColor: "#FFFFFF",
+          
         }}
         />
         <Stack.Screen

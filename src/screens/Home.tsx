@@ -18,36 +18,33 @@ const Home = ({ navigation }: HomeProps) => {
     // const isDarkMode = useColorScheme() === 'dark'
 
     return (
-        <SafeAreaView>
-            <ScrollView>
-                <View style={styles.container}>
-                    <Text style={styles.smallText}>Home Screen</Text>
-                    <Button
-                        title='Go to details'
-                        // onPress={() => navigation.navigate("Details", {
-                        //     productId: "86"
-                        // })}
-                        // onPress={() => navigation.navigate("Details")}
-                        onPress={() => navigation.push('Details', {
-                            productId: "86"
-                        })}
-                    />
-                    <Button
+        <ScrollView>
+            <View style={styles.container}>
+                <Text style={styles.smallText}>Home Screen</Text>
+                <Button
+                    title='Go to details'
+                    // onPress={() => navigation.navigate("Details", {
+                    //     productId: "86"
+                    // })}
+                    // onPress={() => navigation.navigate("Details")}
+                    onPress={() => navigation.push('Details', {
+                        productId: "86"
+                    })}
+                />
+                <Button
                     title='Web View'
                     onPress={() => navigation.push('Web')}
                 />
-                </View>
+            </View>
 
-                <FlatCards />
-                <ElevatedCards />
-                <AppForm />
-                <FancyCard />
-                <ContactList />
-                <View>
-                    <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
-                </View>
-            </ScrollView>
-
+            <FlatCards />
+            <ElevatedCards />
+            <AppForm />
+            <FancyCard />
+            <ContactList />
+            <View>
+                <WebView source={{ uri: 'https://reactnative.dev/' }} style={{ flex: 1 }} />
+            </View>
             {/* <View style={{backgroundColor: 'dodgerblue', width: 150, height: 70}}>
             </View>
             <View>
@@ -56,7 +53,7 @@ const Home = ({ navigation }: HomeProps) => {
             <View>
             <Text style={isDarkMode ? styles.whiteText : styles.blackText}>Hello World !</Text>
             </View> */}
-        </SafeAreaView>
+        </ScrollView>
     )
 }
 
