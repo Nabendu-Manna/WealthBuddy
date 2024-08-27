@@ -16,7 +16,7 @@ const AppForm = () => {
     };
 
     const onError: SubmitErrorHandler<MyFormInputs> = (errors, e) => {
-        return console.log("form errors")
+        // return console.log("form errors")
     }
 
     return (
