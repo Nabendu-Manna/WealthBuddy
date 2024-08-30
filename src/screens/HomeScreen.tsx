@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, /*useColorScheme,*/ Platform } from 'react-native';
+import {  View, ScrollView /* , useColorScheme,StyleSheet, Platfor */  } from 'react-native';
 import React from 'react';
 
 import FlatCards from '../components/FlatCards';
@@ -14,9 +14,8 @@ const HomeScreen = (): JSX.Element => {
 
     return (
         <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.smallText}>Home Screen</Text>
-                {/* <Button
+            {/* <View style={styles.container}>
+                <Button
                     title="Go to details"
                     // onPress={() => navigation.navigate("Details", {
                     //     productId: "86"
@@ -29,8 +28,8 @@ const HomeScreen = (): JSX.Element => {
                 <Button
                     title="Web View"
                     onPress={() => navigation.push('Web')}
-                /> */}
-            </View>
+                />
+            </View> */}
 
             <FlatCards />
             <ElevatedCards />
@@ -54,20 +53,20 @@ const HomeScreen = (): JSX.Element => {
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: Platform.OS === 'android' ? 20 : 0,
-    },
-    smallText: {
-        color: '#000000',
-    },
-    whiteText: {
-        color: '#ffffff',
-    },
-    blackText: {
-        color: '#000000',
-    },
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center',
+//         paddingTop: Platform.OS === 'android' ? 20 : 0,
+//     },
+//     smallText: {
+//         color: '#000000',
+//     },
+//     whiteText: {
+//         color: '#ffffff',
+//     },
+//     blackText: {
+//         color: '#000000',
+//     },
+// });
