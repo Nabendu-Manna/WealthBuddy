@@ -10,6 +10,9 @@ const Web = ({ navigation }): JSX.Element => {
 
     const INJECTED_JAVASCRIPT = `
     (function() {
+        document.getElementsByTagName('header')[0].style.display = 'none';
+    })();
+    (function() {
         document.getElementById('pospLoginButton').addEventListener('click', function(e) {
             window.ReactNativeWebView.postMessage('');
         });

@@ -99,7 +99,7 @@ function App(): JSX.Element {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={screenOptions}>
-          <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: true }} />
+          <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
           <Tab.Screen name="Web" component={Web} />
           <Tab.Screen name="Settings" component={SettingsScreen} />
         </Tab.Navigator>
