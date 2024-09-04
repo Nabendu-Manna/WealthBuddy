@@ -75,7 +75,7 @@ const AppTab = () => {
             screenOptions={screenOptions}>
             <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
             <Tab.Screen name="Web" component={Web} />
-            <Tab.Screen name="Settings" component={SettingsScreen} />
+            <Tab.Screen name="Settings" component={SettingsScreen} options={{ headerShown: true }} />
         </Tab.Navigator>
     );
 };
