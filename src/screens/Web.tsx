@@ -9,8 +9,8 @@ const Web = ({ navigation }: { navigation: any }): JSX.Element => {
 
     return (
         <>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={{ fontSize: 30 }}>This is the home screen!</Text>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#E0E6EC' }}>
+                <Text  style={{ fontSize: 30, color: '#000000' }}>This is the home screen!</Text>
                 <Button
                     onPress={() => navigation.navigate('WebModal')}
                     title="Open Modal"
