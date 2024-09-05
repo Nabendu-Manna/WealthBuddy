@@ -5,6 +5,8 @@ import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import AppStack from './AppStack';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -14,16 +16,18 @@ function App(): JSX.Element {
 
 
   return (
-    <SafeAreaView style={[backgroundStyle, { flex: 1 }]}>
-      <StatusBar
-        animated={true}
-        backgroundColor={'#FFFFFF'}
-        barStyle={'dark-content'}
-        showHideTransition={'slide'}
-        translucent={false}
-      />
-      <AppStack />
-    </SafeAreaView>
+    <Provider store={store}>
+      <SafeAreaView style={[backgroundStyle, { flex: 1 }]}>
+        <StatusBar
+          animated={true}
+          backgroundColor={'#FFFFFF'}
+          barStyle={'dark-content'}
+          showHideTransition={'slide'}
+          translucent={false}
+        />
+        <AppStack />
+      </SafeAreaView>
+    </Provider>
   );
 }
 
