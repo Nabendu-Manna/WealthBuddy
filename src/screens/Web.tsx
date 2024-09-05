@@ -1,35 +1,23 @@
-import React from 'react'
-import { Text } from 'react-native';
-import { WebView } from 'react-native-webview'
+import React from 'react';
+import { Button, Text, View } from 'react-native';
 
-const Web = ({ navigation }): JSX.Element => {
-    navigation.addListener('tabPress', (e) => {
+const Web = ({ navigation }: { navigation: any }): JSX.Element => {
+    navigation.addListener('tabPress', (/*e*/) => {
         // Prevent default action
         // e.preventDefault();
     });
 
-    const INJECTED_JAVASCRIPT = `
-    (function() {
-        document.getElementsByTagName('header')[0].style.display = 'none';
-    })();
-    (function() {
-        document.getElementById('pospLoginButton').addEventListener('click', function(e) {
-            window.ReactNativeWebView.postMessage('');
-        });
-    })();
-    `;
-
-    const [webViewStatus, setWebViewStatus] = React.useState('No');
-
     return (
         <>
-            <Text style={{ color: '#000000' }}>{webViewStatus}</Text>
-            <WebView source={{ uri: 'http://gweb.ecelticgroup.com/' }}
-                injectedJavaScript={INJECTED_JAVASCRIPT}
-                style={{ flex: 1 }} onMessage={() => setWebViewStatus('Yes')} />
-
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#E0E6EC' }}>
+                <Text  style={{ fontSize: 30, color: '#000000' }}>This is the home screen!</Text>
+                <Button
+                    onPress={() => navigation.navigate('WebModal')}
+                    title="Open Modal"
+                />
+            </View>
         </>
-    )
-}
+    );
+};
 
-export default Web
+export default Web;
