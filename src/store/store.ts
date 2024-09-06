@@ -1,10 +1,20 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './counter/counterSlice';
+
+import counterReducer from './features/counter/counterSlice';
+import userReducer from './features/user/userSlice';
+
+import { githubUserApi } from '../services/githubUser';
+
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    user: userReducer,
+    [githubUserApi.reducerPath]: githubUserApi.reducer,
   },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(githubUserApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 const Web = ({ navigation }: { navigation: any }): JSX.Element => {
     navigation.addListener('tabPress', (/*e*/) => {
@@ -9,8 +9,8 @@ const Web = ({ navigation }: { navigation: any }): JSX.Element => {
 
     return (
         <>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#E0E6EC' }}>
-                <Text  style={{ fontSize: 30, color: '#000000' }}>This is the home screen!</Text>
+            <View style={styles.container}>
+                <Text style={styles.primaryTest}>This is the home screen!</Text>
                 <Button
                     onPress={() => navigation.navigate('WebModal')}
                     title="Open Modal"
@@ -19,5 +19,18 @@ const Web = ({ navigation }: { navigation: any }): JSX.Element => {
         </>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#E0E6EC',
+    },
+    primaryTest: {
+        fontSize: 30,
+        color: '#000000',
+    },
+});
 
 export default Web;

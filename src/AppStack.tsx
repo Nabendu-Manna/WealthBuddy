@@ -4,16 +4,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AppTab from './AppTab';
 import WelcomeScreen from './screens/WelcomeScreen';
 import WebModal from './screens/WebModal';
+import FiendUser from './screens/FiendUser';
 
 
 export type RootStackParamList = {
     WelcomeScreen: undefined;
     AppTab: undefined;
     WebModal: undefined;
+    fiendUser: undefined;
 };
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
-
 
 const AppStack = () => {
     return (
@@ -38,7 +38,8 @@ const AppStack = () => {
                     />
                 </Stack.Group>
                 <Stack.Group screenOptions={{ presentation: 'modal' }}>
-                    <Stack.Screen name="WebModal" component={WebModal} />
+                    <Stack.Screen name="WebModal" options={{ title: 'Products' }} component={WebModal} />
+                    <Stack.Screen name="fiendUser" options={{ title: 'Fiend User' }} component={FiendUser} />
                 </Stack.Group>
             </Stack.Navigator>
         </NavigationContainer>

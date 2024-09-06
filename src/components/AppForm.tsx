@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, TextInput, Pressable, TouchableOpacity } from 'react-native'
-import { useForm, Controller, SubmitErrorHandler, SubmitHandler } from 'react-hook-form'
-import { ErrorMessage } from '@hookform/error-message'
-import React from 'react'
+import { StyleSheet, Text, View, TextInput, Pressable, TouchableOpacity } from 'react-native';
+import { useForm, Controller, SubmitErrorHandler, SubmitHandler } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
+import React from 'react';
 
 type MyFormInputs = {
     name: string
@@ -9,15 +9,17 @@ type MyFormInputs = {
 }
 
 const AppForm = () => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { register, setValue, handleSubmit, control, reset, formState: { errors } } = useForm<MyFormInputs>();
 
     const onSubmit: SubmitHandler<MyFormInputs> = data => {
-        console.log(data)
+        console.log(data);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-shadow
     const onError: SubmitErrorHandler<MyFormInputs> = (errors, e) => {
         // return console.log("form errors")
-    }
+    };
 
     return (
         <View style={styles.container}>
@@ -60,7 +62,7 @@ const AppForm = () => {
                         onBlur={onBlur}
                         onChangeText={(inpValue) => onChange(inpValue)}
                         value={value}
-                        keyboardType='numeric'
+                        keyboardType="numeric"
                     />
                 )}
             />
@@ -102,15 +104,15 @@ const AppForm = () => {
                     reset({
                         name: '',
                         phone: '',
-                    })
+                    });
                 }}>
                 <Text style={styles.buttonText}>Reset</Text>
             </Pressable>
         </View>
-    )
-}
+    );
+};
 
-export default AppForm
+export default AppForm;
 
 const styles = StyleSheet.create({
     label: {
@@ -161,5 +163,5 @@ const styles = StyleSheet.create({
         // paddingTop: Constants.statusBarHeight,
         padding: 8,
         backgroundColor: '#0D0F1A',
-    }
-})
+    },
+});
