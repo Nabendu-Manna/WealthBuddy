@@ -6,15 +6,21 @@ import { setUserSearchKey } from '../store/features/user/userSlice';
 import { useGetFollowersByNameQuery } from '../services/githubUser';
 
 const FiendUser = () => {
-    const [searchKey, setSearchKey] = useState('AyanNandaGoswami');
+    const [searchKey, setSearchKey] = useState('');
     const userSearchKey = useAppSelector((state) => state.user.userSearchKey);
     const dispatch = useAppDispatch();
-    const [skip, setSkip] = React.useState(true);
-    const { data, error, isLoading, isUninitialized } = useGetFollowersByNameQuery(userSearchKey, { skip });
+    const [skip, setSkip] = useState(true);
+    const [queryKey, setQueryKey] = useState('');
+    const { data, error, isLoading, isUninitialized } = useGetFollowersByNameQuery(queryKey, { skip });
 
     useEffect(() => {
-        if (!userSearchKey || userSearchKey === '') { setSkip(true); }
-        else { setSkip(false); }
+        if (!userSearchKey || userSearchKey === '') {
+            setSkip(true);
+            // setQueryKey('');
+        } else {
+            setSkip(false);
+            setQueryKey(userSearchKey);
+        }
     }, [userSearchKey]);
 
     useEffect(() => {
